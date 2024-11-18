@@ -1,0 +1,104 @@
+@font-face {
+	font-family: 'Heading Now'; 
+	src: url('https://fonts.vdhazel.com/headingnow/Heading-Now-Variable-Regular-trial.woff2') format('woff2'),
+		url('/fonts/Poppins-ExtraBold.woff2') format('woff2'); 
+	font-weight: normal; 
+	font-style: normal; 
+  }
+  
+  .animated-text {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	font-size: 10vw;
+	line-height: 11vw;
+	font-family: "Heading Now", sans-serif;	
+	font-optical-sizing: auto;
+	font-style: normal;
+	color: #fff;
+  }
+  
+  .letter {
+	display: inline-block;
+	--wght: 100;
+	--wdth: 85;
+	--opacity: 0.25;
+	--letter-spacing: 0;
+	--font-size: 15vw;
+	font-variation-settings: "wght" var(--wght), "wdth" var(--wdth);
+	opacity: var(--opacity);
+	letter-spacing: var(--letter-spacing);
+	font-size: var(--font-size);
+	transition: 
+		font-variation-settings 1s ease-in-out,
+		opacity 1s ease-in-out,
+		letter-spacing 2s ease-in-out,
+		font-size 1s ease-in-out;
+  }
+  
+/* 	text-typing	*/
+
+.text-typing {
+	position: relative;
+	top: 3rem;
+	width: 690px;
+	font-family: 'Poppins', sans-serif;	
+  }
+  
+  .brutalist-input {
+	width: 100%;
+	padding: 15px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+	background-color: #fff;
+	border: 4px solid #000;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0;
+	outline: none;
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	box-shadow: 5px 5px 0 #000, 10px 10px 0 #ea7641;
+  }
+  
+  .brutalist-input:focus {
+	transform: rotate(0deg) scale(1.05);
+	background-color: #ea7641;
+  }
+  
+  .smooth-type {
+	position: relative;
+	overflow: hidden;
+  }
+
+  .cursor {
+	display: inline-block;
+	width: 0.1em;
+	background-color: #eee;
+  }
+  
+  .blink {
+	animation: blink 0.7s steps(1) infinite;
+  }
+  
+  @keyframes blink {
+	50% {
+	  opacity: 0;
+	}
+  }
+  
+  @media (max-width: 1048px) {
+
+  }
+
+  @media (max-width: 764px) {
+	.text-typing {
+		width: auto;
+		top:4rem;
+	  }
+	  .brutalist-input {
+		font-size: 15px;
+		text-align: center;
+		padding: 4px;
+	  }
+  }

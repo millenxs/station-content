@@ -1,0 +1,255 @@
+.feature-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+  }
+  
+/* Styles for card */
+.card {
+	width: 300px;
+	padding: 20px;
+	background: #fff;
+	border: 6px solid #000;
+	box-shadow: 12px 12px 0 #000;
+	transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+	transform: translate(-5px, -5px);
+	box-shadow: 17px 17px 0 #000;
+  }
+  
+  .card__title {
+	font-size: 32px;
+	font-weight: 900;
+	color: #000;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+	display: block;
+	position: relative;
+	overflow: hidden;
+  }
+  
+  .card__title::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 90%;
+	height: 3px;
+	background-color: #000;
+	transform: translateX(-100%);
+	transition: transform 0.3s;
+  }
+  
+  .card:hover .card__title::after {
+	transform: translateX(0);
+  }
+  
+  .card__content {
+	font-size: 16px;
+	line-height: 1.4;
+	color: #000;
+	margin-bottom: 20px;
+  }
+  
+  .card__form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+  }
+  
+  .card__form input {
+	padding: 10px;
+	border: 3px solid #000;
+	font-size: 16px;
+	font-family: inherit;
+	transition: transform 0.3s;
+	width: calc(100% - 26px);
+  }
+  
+  .card__form input:focus {
+	outline: none;
+	transform: scale(1.05);
+	background-color: #000;
+	color: #ffffff;
+  }
+  
+  .card__button {
+	border: 3px solid #000;
+	background: #000;
+	color: #fff;
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.3s;
+	width: 50%;
+  }
+  
+  .card__button::before {
+	content: "Sure?";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 105%;
+	background-color: #5ad641;
+	color: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translateY(100%);
+	transition: transform 0.3s;
+  }
+  
+  .card__button:hover::before {
+	transform: translateY(0);
+  }
+  
+  .card__button:active {
+	transform: scale(0.95);
+  }
+  
+  /* Optional glitch animation */
+  @keyframes glitch {
+	0% {
+	  transform: translate(2px, 2px);
+	}
+	25% {
+	  transform: translate(-2px, -2px);
+	}
+	50% {
+	  transform: translate(-2px, 2px);
+	}
+	75% {
+	  transform: translate(2px, -2px);
+	}
+	100% {
+	  transform: translate(2px, 2px);
+	}
+  }
+  
+  .glitch {
+	animation: glitch 0.3s infinite;
+  }
+  
+  .content {
+	text-align: center;
+  }
+  
+  .feature-text {
+	font-size: 1em;
+	font-weight: bold;
+	opacity: 0;
+	letter-spacing: -0.5em;
+  }
+  
+  
+  /* Animista Keyframes */
+  @keyframes tracking-in-expand {
+	0% {
+	  letter-spacing: -0.5em;
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0.6;
+	}
+	100% {
+	  letter-spacing: normal;
+	  opacity: 1;
+	}
+  }
+  
+  .tracking-in-expand {
+	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  }
+  
+  .fixed-size {
+	width: 250px; /* Define a largura fixa do card */
+	height: 300px; /* Define a altura fixa do card */
+  }
+  
+ .flex {
+	display: flex;
+	gap: 1rem;
+	overflow-x: auto; /* Permite rolagem horizontal se necessário em telas menores */
+  }
+
+/*without*/
+
+.without {
+  font-size: 5vw;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  padding: 1em;
+  text-decoration: none;
+  display: flex;
+}
+
+.without {
+  display: inline-block;
+  white-space: pre;
+}
+
+.without .word {
+  overflow: hidden;
+}
+
+.without .word .char {
+  position: relative;
+  animation: slide-up 1s cubic-bezier(0.75, 0, 0.25, 1) both;
+  animation-delay: calc(1s + (0.5s * var(--word-index)));
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+.without [data-word="melhor"] {
+  overflow: visible;
+}
+
+.without [data-word="melhor"] .char {
+  animation: none;
+  visibility: hidden;
+}
+
+.without [data-word="melhor"] .char:before,
+.without [data-word="melhor"] .char:after {
+  visibility: visible;
+  color: #ea7641;
+  overflow: hidden;
+  height: 100%;
+  width: 1em;
+  text-indent: 0.20em;
+  margin-left: -0.25em;
+  animation: fade-in 5s cubic-bezier(0.75, 0, 0.25, 1) both alternate;
+  animation-delay: calc(5s + -0.2s * (var(--char-total) - var(--char-index)));
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .without [data-word="without"] .char:before,
+  .without [data-word="without"] .char:after {
+    color: #ffffff;
+  }
+}

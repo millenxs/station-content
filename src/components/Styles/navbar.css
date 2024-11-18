@@ -1,0 +1,11 @@
+/* Oculta o botão de hambúrguer em telas maiores */
+.hamburger-button {
+	display: block; /* Visível por padrão */
+  }
+  
+  @media (min-width: 768px) {
+	.hamburger-button {
+	  display: none; /* Oculto em telas médias ou maiores */
+	}
+  }
+  
