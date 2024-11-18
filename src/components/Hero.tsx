@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
       <div className="video-container">
         <video
           ref={videoRef}
-          src="/public/videos/digital_mortgage (1080p).mp4"
+          src="/videos/digital_mortgage (1080p).mp4"
           autoPlay
           muted
           loop
